@@ -7,6 +7,7 @@ public class ChangeValueInBox : MonoBehaviour
 
     private bool active = false;
     private bool isMouseOver;
+    private bool isAnwser = false;
 
     private Color defaultColor;
     private readonly Color activeColor = Color.blue;
@@ -82,37 +83,36 @@ public class ChangeValueInBox : MonoBehaviour
         if (isMouseOver) return;
 
         isMouseOver = true;
-        ChangeColor();
+
+        if (!active)
+        {
+            GetComponent<MeshRenderer>().material.color = activeColor;
+        }
     }
 
     private void OnMouseExit()
     {
         isMouseOver = false;
-        ChangeColor();
-    }
-
-    private void ChangeColor()
-    {
-        if (active)
+        if (isAnwser)
         {
-            this.active = false;
-            GetComponent<MeshRenderer>().material.color = defaultColor;
+            GetComponent<MeshRenderer>().material.color = answerColor;
         }
         else
         {
-            this.active = true;
-            GetComponent<MeshRenderer>().material.color = activeColor;
+            GetComponent<MeshRenderer>().material.color = defaultColor;
         }
     }
 
+
     public void SetAnswerColor()
     {
-
+        isAnwser = true;
         GetComponent<MeshRenderer>().material.color = answerColor;
     }
 
     public void ResetColor()
     {
+        isAnwser = false;
         GetComponent<MeshRenderer>().material.color = defaultColor;
     }
 
