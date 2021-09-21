@@ -19,7 +19,7 @@ public class BoxController : MonoBehaviour
 
     [SerializeField] TextResultController textResultController;
 
-    private int largestElement = -1;
+    public int largestElement = -1;
     private int xLength = 5;
     private int yLength = 8;
 
@@ -62,6 +62,12 @@ public class BoxController : MonoBehaviour
         GenarateRandomNewNumber();
     }
 
+    public void ResetMax()
+    {
+        largestElement = -1;
+        textResultController.ResetMax();
+    }
+
     private void GenarateRandomNewNumber()
     {
         for (int i = 0; i < xLength; ++i)
@@ -71,6 +77,11 @@ public class BoxController : MonoBehaviour
                 values[j, i] = Random.Range(0, 10);
             }
         }
+    }
+
+    public void UpdateValue(int x, int y, int value)
+    {
+        values[y, x] = value;
     }
 
 
