@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{5820C879-29EC-0629-133E-47F93D7F5C51}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Box/ChangeValueInBox.cs">
+    <Files>
+      <File FileName="Assets/Button/BoxController.cs" Line="113" Column="36" />
+      <File FileName="Assets/Button/ButtonController.cs" Line="30" Column="30" />
+      <File FileName="Assets/Box/ChangeValueInBox.cs" Line="76" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FindLargestAreaOfMatrix" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Box" expanded="True">
+                <Node name="ChangeValueInBox.cs" selected="True" />
+              </Node>
+              <Node name="Button" expanded="True" />
+              <Node name="Script" expanded="True" />
+              <Node name="TextResult" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e2158d48-50a4-4722-98ba-02a7234bdfe2" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
