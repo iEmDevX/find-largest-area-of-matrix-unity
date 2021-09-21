@@ -52,9 +52,4 @@ public class CoordinateLabel : MonoBehaviour
 
         textMeshPro.text = values[i, j].ToString();
     }
-
-    public void Print()
-    {
-        Debug.Log($"{transform.parent.name} => i = {i} j = {j}");
-    }
 }
