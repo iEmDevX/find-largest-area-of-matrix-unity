@@ -9,9 +9,11 @@ public class ChangeValueInBox : MonoBehaviour
     private bool isMouseOver;
 
     private Color defaultColor;
-    private Color activeColor = Color.blue;
-    private int x;
-    private int y;
+    private readonly Color activeColor = Color.blue;
+    private readonly Color answerColor = Color.black;
+
+    public int x;
+    public int y;
 
     private GameObject objParent;
     private BoxController boxController;
@@ -102,4 +104,16 @@ public class ChangeValueInBox : MonoBehaviour
             GetComponent<MeshRenderer>().material.color = activeColor;
         }
     }
+
+    public void SetAnswerColor()
+    {
+
+        GetComponent<MeshRenderer>().material.color = answerColor;
+    }
+
+    public void ResetColor()
+    {
+        GetComponent<MeshRenderer>().material.color = defaultColor;
+    }
+
 }

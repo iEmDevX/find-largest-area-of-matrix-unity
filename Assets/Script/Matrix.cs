@@ -7,6 +7,9 @@ namespace MatrixProblem
 {
     class Matrix
     {
+        public List<MatrixValue> BiggestArea { get; private set; } = new List<MatrixValue>();
+        private List<MatrixValue> AreaSet = new List<MatrixValue>();
+
         public int X { get; private set; }
         public int Y { get; private set; }
 
@@ -81,12 +84,29 @@ namespace MatrixProblem
             int[,] tabClone = (int[,])Tab.Clone();
             int max = 0;
 
+            AreaSet.Clear();
+            BiggestArea.Clear();
+
             // loop area
             for (int y = 0; y < Y; ++y)
             {
                 for (int x = 0; x < X; ++x)
                 {
-                    max = Math.Max(max, GetCountConnectDirection(tabClone, y, x, Tab[y, x]));
+                    var count = GetCountConnectDirection(tabClone, y, x, Tab[y, x]);
+
+                    // Keep Biggest Area
+                    if (max < count)
+                    {
+                        BiggestArea.Clear();
+                        AreaSet.ForEach(item => BiggestArea.Add(item));
+                    }
+                    else if (max == count)
+                    {
+                        AreaSet.ForEach(item => BiggestArea.Add(item));
+                    }
+                    AreaSet.Clear();
+
+                    max = Math.Max(max, count);
                 }
             }
             return max;
@@ -100,6 +120,7 @@ namespace MatrixProblem
                 return 0;
             }
 
+            AreaSet.Add(new MatrixValue( x, y ));
             grid[y, x] = -1;
             int count = 1;
 
@@ -113,5 +134,15 @@ namespace MatrixProblem
 
     }
 
+    class MatrixValue
+    {
+        public int X { get; private set; }
+        public int Y { get; private set; }
 
+        public MatrixValue(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
 }
